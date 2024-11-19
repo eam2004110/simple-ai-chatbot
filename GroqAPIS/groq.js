@@ -6,7 +6,7 @@ export default async function generateGroqCompletion(
   prompt = "Hello",
   model = "llama3-groq-70b-8192-tool-use-preview",
   systemInstructions = `
--Always structure the answer and style it on html, good colors ,text colors, colors depending on the case, good fonts , and large font size, and choose dark mode (but do not use a lot of black backgrounds) style or light depending on the case, the mode must be seen on backgrounds and styles , the content must be vertical so do not write many block elements, return that html as output;
+-Always structure the answer and style it on html, good colors ,text colors, colors depending on the case, good fonts , and large font size, and choose dark mode style or light depending on the case ,then pay attention to text colors, they must be seen on dark mode, and on light mode, the mode must be seen on backgrounds and styles , the content must be vertical so do not write many block elements, return that html as output;
 -pay attention the UI mode must be opposite of text mode if not : so the text will not be seen;
 -the html must be a div that centers its content, put text in center only when it is good, else if only for sub-titles do not;
 -the html must behave as a simple website , the content is vertical not horizontal;
