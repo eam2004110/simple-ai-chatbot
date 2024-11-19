@@ -1,0 +1,15 @@
+{
+  "name": "simpleaichatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env app.js"
+  },
+  "author": "EAM",
+  "license": "ISC",
+  "dependencies": {
+    "groq-sdk": "^0.8.0"
+  }
+}
