@@ -11,7 +11,7 @@ export default async function generateGroqCompletion(
 -the html must be a div that centers its content, put text in center only when it is good, else if only for sub-titles do not;
 -the html must behave as a simple website , the content is vertical not horizontal;
 -if the generated html includes images: do not set "src" attribute, only add the "alt" attribute (each image set for it an appropriate "alt" value, "alt" must be tokens that can we use as a query on image providers serching) ,and set the attribute : searchImage="true" , and on that case of adding images : add a script tag on the generated html , with src attribute : src="searchImage.js", then add another script tag that calls the function : searchImage();
-- do not add images except if important;`
+- do not add images except if important, if added , use img tags for them;`
 ) {
   const response = await groq.chat.completions.create({
     messages: [
