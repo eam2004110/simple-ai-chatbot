@@ -186,7 +186,12 @@ const app = http.createServer(async (req, res) => {
         res.end(html);
       } else {
         const content = await fs.readFile(filePath);
-        res.writeHead(200, { "Content-Type": "image/png" });
+        res.writeHead(200, {
+          "Content-Type": !filePath.includes("favicon")
+            ? "image/png"
+            : "image/x-icon",
+        });
+
         res.end(content, "utf8");
       }
     } else if (req.url === "/generate" && req.method === "POST") {
