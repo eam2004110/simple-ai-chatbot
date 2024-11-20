@@ -176,11 +176,6 @@ const app = http.createServer(async (req, res) => {
       const images = Array.from(section.querySelectorAll("img[alt]"));
       if (images.length > 0) {
         images.forEach(async (img) => {
-          img.parentElement.style.display="flex";
-          img.parentElement.style.flexDirection="column";
-          img.parentElement.style.alignItems="center";
-          img.parentElement.style.justifyContent="center";
-          img.parentElement.style.gap="3px";
           const resp = await fetch("/images/?token=" + img.alt);
           img.src= await resp.text();
         });
