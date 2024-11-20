@@ -49,7 +49,7 @@ const app = http.createServer(async (req, res) => {
       <textarea id="userPrompt"></textarea><button id="submit"></button>
     </div>
   </body>
-  <style nonce="${nonce}">
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -211,10 +211,6 @@ const app = http.createServer(async (req, res) => {
         generatedContent = generatedContent.replaceAll(
           "<script>",
           `<script nonce="${nonce}">`
-        );
-        generatedContent = generatedContent.replaceAll(
-          "<style",
-          `<style nonce="${nonce}"`
         );
 
         res.end(generatedContent);
