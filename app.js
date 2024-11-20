@@ -100,6 +100,9 @@ const app = http.createServer(async (req, res) => {
           object-fit:contain;
           width:100%;
         }
+        pre{
+          text-wrap-mode:wrap;
+        }
       }
     }
     #promptArea {
