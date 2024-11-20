@@ -95,7 +95,6 @@ const app = http.createServer(async (req, res) => {
         background-color: rgb(0, 51, 38);
         width: 100%;
         justify-self: flex-start;
-        color: white;
         img{
           object-fit:contain;
           width:100%;
