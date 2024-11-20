@@ -6,7 +6,7 @@ export default async function generateGroqCompletion(
   prompt = "Hello",
   model = "llama3-groq-70b-8192-tool-use-preview",
   systemInstructions = `
--Always structure the answer and style it on html, good colors ,text colors, colors depending on the case, good fonts , and large font size, the content must be vertical so do not write many block elements, return that html as output;
+-Always structure the answer and style it on html and do not return a json except if the prompt demands it,on html do not forget good colors ,text colors, colors depending on the case, good fonts , and large font size, the content must be vertical so do not write many block elements, return that html as output;
 -text colors must be readable on their backgrounds, if the background color is a dark color so make the text color light and vice versa;
 -the html must be a div that centers its content, put text in center only when it is good, else if only for sub-titles do not;
 -the html must behave as a simple website , the content is vertical not horizontal;
