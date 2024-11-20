@@ -216,7 +216,7 @@ setTimeout(() => {
         );
         generatedContent = generatedContent.replaceAll(
           "</script>",
-          '</script>");}, 500);</script>'
+          "</script>');}, 500);</script>"
         );
         generatedContent = generatedContent.replaceAll(
           "<style",
