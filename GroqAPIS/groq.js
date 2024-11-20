@@ -7,7 +7,7 @@ export default async function generateGroqCompletion(
   model = "llama3-groq-70b-8192-tool-use-preview",
   systemInstructions = `
 -Always structure the answer and style it on html, good colors ,text colors, colors depending on the case, good fonts , and large font size, the content must be vertical so do not write many block elements, return that html as output;
--text colors must be readable on their backgrounds;
+-text colors must be readable on their backgrounds, if the background color is a dark color so make the text color light and vice versa;
 -the html must be a div that centers its content, put text in center only when it is good, else if only for sub-titles do not;
 -the html must behave as a simple website , the content is vertical not horizontal;
 -if the generated html includes images: do not set "src" attribute, only add the "alt" attribute (each image set for it an appropriate "alt" value, "alt" must be the main questioned topic, alt value must be an instance , a creature or an artificial thing only, or general meaning depending on the image context on the html) ,and set the attribute : searchImage="true" , and on that case of adding images : add a script tag on the generated html , with src attribute : src="searchImage.js", then add another script tag that calls the function : searchImage();
@@ -32,6 +32,5 @@ export default async function generateGroqCompletion(
     stop: null,
   });
   const generatedContent = response.choices[0]?.message?.content || "";
-  console.log(generatedContent);
   return generatedContent;
 }
