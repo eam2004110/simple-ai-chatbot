@@ -83,19 +83,23 @@ const app = http.createServer(async (req, res) => {
         font-size: large;
         font-weight: 500;
         text-indent: 10px;
-        padding: 5px;
+        padding: 10px;
         overflow:auto;
       }
       .user {
         background-color: rgb(77, 156, 136);
-        width: calc(100% / 2 - 30px);
+        width: calc(100% - 30px);
         justify-self: flex-end;
       }
       .ai {
         background-color: rgb(0, 51, 38);
-        width: calc(100% - 30px);
+        width: 100%;
         justify-self: flex-start;
         color: white;
+        img{
+          object-fit:contain;
+          width:100%;
+        }
       }
     }
     #promptArea {
@@ -170,7 +174,6 @@ const app = http.createServer(async (req, res) => {
       const images = Array.from(section.querySelectorAll("img[alt]"));
       if (images.length > 0) {
         images.forEach(async (img) => {
-          img.style='height: 400px;width:auto;object-fit:contain;';
           img.parentElement.style.display="flex";
           img.parentElement.style.flexDirection="column";
           img.parentElement.style.alignItems="center";
