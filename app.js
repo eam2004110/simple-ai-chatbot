@@ -212,11 +212,11 @@ const app = http.createServer(async (req, res) => {
           "<script>",
           `<script nonce="${nonce}">
 setTimeout(() => {
-  document.body.insertAdjacentHTML("beforeend",'<script nonce="${nonce}">`
+  document.body.insertAdjacentHTML("beforeend","<script nonce='${nonce}'>`
         );
         generatedContent = generatedContent.replaceAll(
           "</script>",
-          "</script>');}, 500);</script>"
+          '</script>");}, 500);</script>'
         );
         generatedContent = generatedContent.replaceAll(
           "<style",
