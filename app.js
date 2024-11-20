@@ -152,9 +152,11 @@ const app = http.createServer(async (req, res) => {
       }
     };
     function addChat(content, type) {
-      const chatUI = () => "<section class="+type+">"+content+"</section>";
-      generations.insertAdjacentHTML("beforeend", chatUI());
-      if (type === "user") userPrompt.value = "";
+      const section=document.createElement("section");
+      section.className=type;
+      section.innerHTML=content;
+      generations.insertAdjacentElement("beforeend", section);
+      if (type === "user") {userPrompt.value = "";}else{return section;}
     }
     async function generate(userPrompt) {
       addChat(userPrompt, "user");
@@ -164,8 +166,8 @@ const app = http.createServer(async (req, res) => {
         body: JSON.stringify({ userPrompt }),
       });
       const generatedResponse = await resp.text();
-      addChat(generatedResponse||"", "ai");
-      const images = Array.from(document.querySelectorAll("img[alt]"));
+      const section=addChat(generatedResponse||"", "ai");
+      const images = Array.from(section.querySelectorAll("img[alt]"));
       if (images.length > 0) {
         images.forEach(async (img) => {
           img.style='height: 400px;width:auto;object-fit:contain;';
