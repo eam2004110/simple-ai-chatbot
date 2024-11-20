@@ -209,8 +209,12 @@ const app = http.createServer(async (req, res) => {
         let generatedContent = await generateGroqCompletion(userPrompt);
         res.writeHead(200, { "Content-Type": "text/html" });
         generatedContent = generatedContent.replaceAll(
-          "<script",
-          `<script nonce="${nonce}"`
+          "<script>",
+          `<script nonce="${nonce}">setTimeout(() => {`
+        );
+        generatedContent = generatedContent.replaceAll(
+          "</script>",
+          "}, 500);</script>"
         );
         generatedContent = generatedContent.replaceAll(
           "<style",
