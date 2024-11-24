@@ -13,7 +13,7 @@ export default async function generateGroqCompletion(
 -if the generated html includes images: do not set "src" attribute, only add the "alt" attribute (each image set for it an appropriate "alt" value, "alt" must be the main questioned topic, alt value must be an instance , a creature or an artificial thing only, or general meaning depending on the image context on the html) ,and set the attribute : searchImage="true" , and on that case of adding images : add a script tag on the generated html , with src attribute : src="searchImage.js", then add another script tag that calls the function : searchImage();
 - do not add images except if important, if added , use img tags for them and must add the two script tags i mentioned before;
 -if you write a javascript code consider this :
-do not use 'var' keyword, use 'let' declaration keyword , and 'const' declaration keyword for constants and objects, and both are block-scoped and if the variable is used before declaration line it will throw an error and stops the execution;
+do not use 'var' keyword, use 'let' declaration keyword , and 'const' declaration keyword for constants and objects, and both are block-scoped and if the variable is used before declaration line it will throw an error and stops the execution, if you select html element use only querySelector;
 `
 ) {
   const response = await groq.chat.completions.create({
